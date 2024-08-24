@@ -17,5 +17,20 @@
         <a-camera gps-camera='simulateLatitude: 51.049; simulateLongitude: -0.723' rotation-reader></a-camera>
         <a-text value="This will always face the user." look-at="[gps-camera]" scale="75 75 75" gps-entity-place="latitude: 51.0491; longitude: -0.723;"></a-text>
     </a-scene>
+    <!-- Device Orientation Debug Script -->
+    <script>
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', function (event) {
+                if (event.alpha !== null) {
+                    console.log('Alpha: ' + event.alpha);
+                    console.log('Beta: ' + event.beta);
+                    console.log('Gamma: ' + event.gamma);
+                } else {
+                    console.log('event.alpha === null');
+                }
+            }, true);
+        } else {
+            console.log("DeviceOrientationEvent is not supported by this browser.");
+        }
+    </script>
 </body>
-

@@ -15,7 +15,21 @@
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'>
 
         <a-camera gps-camera='simulateLatitude: 51.049; simulateLongitude: -0.723' rotation-reader></a-camera>
-        <a-text value="This is tester text." look-at="[gps-camera]" scale="75 75 75" gps-entity-place="latitude: 51.0491; longitude: -0.723;"></a-text>
+        <a-text value="This is the first line of text." look-at="[gps-camera]" scale="100 100 100" <!-- Larger size for the
+            first line -->
+            gps-entity-place="latitude: 51.0491; longitude: -0.723;"
+            color="#FF0000" <!-- Red color for the first line -->
+            font="https://cdn.aframe.io/fonts/mozillavr.ttf"
+            position="0 1 0">
+        </a-text>
+        <a-text value="This is the second line of text." look-at="[gps-camera]" scale="50 50 50" <!-- Smaller size for the
+            second line -->
+            gps-entity-place="latitude: 51.0491; longitude: -0.723;"
+            color="#0000FF" <!-- Blue color for the second line -->
+            font="https://cdn.aframe.io/fonts/mozillavr.ttf"
+            position="0 0.5 0">
+        </a-text>
+
     </a-scene>
     <!-- Device Orientation Debug Script -->
     <script>
